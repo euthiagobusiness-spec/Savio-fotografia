@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070707;
+  --foreground: #f4f0e8;
+  --muted: #8c867c;
+  --line: rgba(244, 240, 232, 0.14);
+  --gold: #c8b89a;
+  --aged-gold: #a68a5b;
+  --surface: #111111;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 7, 7, 0.88), #070707 42%),
+    linear-gradient(120deg, rgba(58, 42, 29, 0.32), transparent 38%),
+    #070707;
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
+}
+
+::selection {
+  background: rgba(166, 138, 91, 0.42);
+  color: #f4f0e8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #c8b89a;
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.cinematic-vignette {
+  background:
+    radial-gradient(circle at 76% 40%, rgba(166, 138, 91, 0.16), transparent 33%),
+    linear-gradient(90deg, rgba(7, 7, 7, 0.94) 0%, rgba(7, 7, 7, 0.66) 42%, rgba(7, 7, 7, 0.18) 74%),
+    linear-gradient(0deg, rgba(7, 7, 7, 0.9) 0%, rgba(7, 7, 7, 0.18) 46%, rgba(7, 7, 7, 0.64) 100%);
+}
+
+.noise-layer {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 78%, transparent);
+  pointer-events: none;
+}
+
+.editorial-rule {
+  background: linear-gradient(90deg, transparent, rgba(200, 184, 154, 0.42), transparent);
+  height: 1px;
+}
+
+.premium-button {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+.premium-button:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 20px 42px rgba(0, 0, 0, 0.34);
+}
+
+.image-depth {
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
