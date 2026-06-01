@@ -29,11 +29,33 @@ export const sectionContent = {
     imageEyebrow: "Estrutura profissional",
     imageTitle: "Um espaço pensado para luz, direção e conforto.",
   },
+  quiz: {
+    eyebrow: "Experiência interativa",
+    title: "Descubra o ensaio ideal para o seu momento.",
+    description:
+      "Uma jornada curta para entender intenção, estilo, ambiente e próxima etapa antes do contato comercial.",
+    resultEyebrow: "Recomendação personalizada",
+    leadTitle: "Transforme sua escolha em um primeiro atendimento mais claro.",
+    leadDescription:
+      "Ao enviar, o WhatsApp abre com um resumo das suas respostas para reduzir perguntas repetitivas e acelerar a orientação.",
+  },
+  serviceJourneys: {
+    eyebrow: "Experiências por serviço",
+    title: "Cada ensaio tem uma jornada própria.",
+    description:
+      "Casamentos, gestantes, famílias, retratos e estúdio não são vendidos como cards iguais. Cada serviço tem intenção, processo e forma de condução.",
+  },
   process: {
     eyebrow: "Experiência",
-    title: "Um processo claro para que a imagem nasça com intenção.",
+    title: "Uma jornada clara do primeiro contato à memória final.",
     description:
-      "Da primeira conversa à entrega final, a experiência combina escuta, direção criativa, técnica e curadoria.",
+      "A experiência combina escuta, direção criativa, planejamento, condução técnica e curadoria para que o cliente se sinta seguro em cada etapa.",
+  },
+  preparation: {
+    eyebrow: "Guia preparatório",
+    title: "Como se preparar para o ensaio.",
+    description:
+      "Conteúdo útil para diminuir dúvidas antes do contato e mostrar cuidado profissional desde a primeira visita.",
   },
   testimonials: {
     eyebrow: "Depoimentos",

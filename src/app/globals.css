@@ -23,6 +23,7 @@
 
 html {
   background: var(--background);
+  scroll-padding-top: 6rem;
 }
 
 body {

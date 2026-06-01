@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { navLinks, siteConfig } from "@/lib/constants";
@@ -8,13 +9,17 @@ import { cn } from "@/lib/utils";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const mobileMenuId = "mobile-navigation";
+  const homeHref = pathname === "/" ? "#inicio" : "/#inicio";
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#070707]/62 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <a
-          href="#inicio"
+          href={homeHref}
           className="group inline-flex flex-col"
           aria-label="Voltar para o início"
         >
@@ -26,11 +31,11 @@ export function Header() {
           </span>
         </a>
 
-        <nav aria-label="Navegação principal" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Navegação principal" className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="text-sm font-medium text-[#d8d1c5] transition hover:text-[#f4f0e8]"
             >
               {link.label}
@@ -75,7 +80,7 @@ export function Header() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   onClick={() => setOpen(false)}
                   className="rounded-[8px] px-4 py-3 text-base font-medium text-[#f4f0e8] hover:bg-white/[0.06]"
                 >

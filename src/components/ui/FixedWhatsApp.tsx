@@ -13,7 +13,15 @@ export function FixedWhatsApp({ href }: FixedWhatsAppProps) {
 
   useEffect(() => {
     const update = () => {
-      setVisible(window.matchMedia("(min-width: 640px)").matches || window.scrollY > 360);
+      const isDesktop = window.matchMedia("(min-width: 640px)").matches;
+      const quizSection = document.getElementById("ensaio-ideal");
+      const quizRect = quizSection?.getBoundingClientRect();
+      const quizVisible =
+        Boolean(quizRect) &&
+        quizRect!.top < window.innerHeight &&
+        quizRect!.bottom > 0;
+
+      setVisible(isDesktop || (window.scrollY > 360 && !quizVisible));
     };
 
     update();
@@ -30,7 +38,7 @@ export function FixedWhatsApp({ href }: FixedWhatsAppProps) {
     <a
       href={href}
       className={cn(
-        "fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#c8b89a] bg-[#f4f0e8] text-[#070707] shadow-2xl shadow-black/40 transition duration-300 hover:bg-[#c8b89a] sm:bottom-7 sm:right-7 sm:w-auto sm:gap-2 sm:px-5",
+        "fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#c8b89a] bg-[#f4f0e8] text-[#070707] shadow-2xl shadow-black/40 transition duration-300 hover:bg-[#c8b89a] sm:bottom-7 sm:right-7 sm:h-14 sm:w-auto sm:gap-2 sm:px-5",
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-4 opacity-0 sm:pointer-events-auto sm:translate-y-0 sm:opacity-100",

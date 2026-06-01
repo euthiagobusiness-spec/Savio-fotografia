@@ -62,7 +62,9 @@ export function Footer() {
 
       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 py-6 text-xs text-[#8c867c] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
         <p>© {new Date().getFullYear()} Sávio Alves Fotógrafo. Todos os direitos reservados.</p>
-        <p>Prévia conceitual. Imagens temporárias substituíveis.</p>
+        <a className="transition hover:text-[#f4f0e8]" href="/privacidade">
+          Política de Privacidade
+        </a>
       </div>
 
       <FixedWhatsApp href={siteConfig.whatsappUrl} />

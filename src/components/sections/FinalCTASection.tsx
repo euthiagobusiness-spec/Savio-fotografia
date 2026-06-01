@@ -33,11 +33,11 @@ export function FinalCTASection() {
               {sectionContent.finalCta.description}
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <MagneticButton href={siteConfig.whatsappUrl}>
-                Solicitar orçamento pelo WhatsApp
+              <MagneticButton href="#ensaio-ideal">
+                Iniciar experiência guiada
               </MagneticButton>
-              <MagneticButton href="#portfolio" variant="secondary">
-                Ver trabalhos recentes
+              <MagneticButton href={siteConfig.whatsappUrl} variant="secondary">
+                Falar pelo WhatsApp
               </MagneticButton>
             </div>
           </div>

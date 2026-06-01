@@ -58,8 +58,8 @@ export function HeroSection() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-            <MagneticButton href={siteConfig.whatsappUrl}>
-              Solicitar orçamento
+            <MagneticButton href="#ensaio-ideal">
+              Descobrir ensaio ideal
             </MagneticButton>
             <MagneticButton href="#portfolio" variant="secondary">
               Ver portfólio
